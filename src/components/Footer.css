@@ -1,0 +1,122 @@
+.footer {
+  background-color: #0f172a;
+  color: #94a3b8;
+  padding: 4.5rem 0 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer-top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding-bottom: 3rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.footer-brand-box {
+  width: 38px;
+  height: 38px;
+  background: var(--primary-green);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 1.25rem;
+}
+
+.footer-brand-title {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+.footer-tagline {
+  font-size: 0.88rem;
+  color: #64748b;
+  margin-top: 0.35rem;
+}
+
+.footer-links-nav {
+  display: flex;
+  align-items: center;
+  gap: 1.8rem;
+  flex-wrap: wrap;
+}
+
+.footer-nav-link {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: #cbd5e1;
+  transition: color var(--transition-fast);
+}
+
+.footer-nav-link:hover {
+  color: var(--primary-green);
+}
+
+.footer-bottom-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  padding-top: 2rem;
+  font-size: 0.85rem;
+}
+
+.footer-copyright {
+  color: #64748b;
+}
+
+.btn-back-to-top {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  transition: all var(--transition-fast);
+  cursor: pointer;
+}
+
+.btn-back-to-top:hover {
+  background: var(--primary-green);
+  color: #ffffff;
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 210, 106, 0.4);
+}
+
+@media (max-width: 640px) {
+  .footer {
+    padding: 3rem 0 1.5rem;
+  }
+  .footer-top-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+    padding-bottom: 2rem;
+  }
+  .footer-links-nav {
+    gap: 1rem 1.4rem;
+  }
+  .footer-bottom-row {
+    flex-direction: column-reverse;
+    align-items: center;
+    text-align: center;
+    gap: 1.5rem;
+    padding-top: 1.5rem;
+  }
+}

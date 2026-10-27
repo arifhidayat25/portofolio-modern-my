@@ -1,0 +1,46 @@
+.floating-scroll-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 990;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--primary-green);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 24px rgba(0, 210, 106, 0.45);
+  cursor: pointer;
+  border: none;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px) scale(0.85);
+  transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.floating-scroll-top.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1);
+}
+
+.floating-scroll-top:hover {
+  background: var(--primary-green-dark);
+  transform: translateY(-4px) scale(1.08);
+  box-shadow: 0 12px 30px rgba(0, 210, 106, 0.6);
+}
+
+.floating-scroll-top:active {
+  transform: translateY(-1px) scale(0.95);
+}
+
+@media (max-width: 640px) {
+  .floating-scroll-top {
+    bottom: 1.25rem;
+    right: 1.25rem;
+    width: 42px;
+    height: 42px;
+  }
+}

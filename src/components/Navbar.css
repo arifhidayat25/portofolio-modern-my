@@ -1,0 +1,328 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  transition: all var(--transition-fast);
+  padding: 1.25rem 0;
+}
+
+.navbar.scrolled {
+  background-color: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  padding: 0.85rem 0;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  border-bottom: 1px solid rgba(0, 210, 106, 0.15);
+}
+
+.nav-container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Brand Logo */
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.brand-text {
+  font-size: 1.45rem;
+  font-weight: 800;
+  color: var(--text-dark);
+  letter-spacing: -0.6px;
+  display: inline-flex;
+  align-items: baseline;
+}
+
+.brand-dot {
+  color: var(--primary-green);
+  font-weight: 900;
+}
+
+/* Desktop Navigation Menu */
+.desktop-nav {
+  display: block;
+}
+
+.nav-menu-desktop {
+  display: flex;
+  align-items: center;
+  gap: 1.8rem;
+  list-style: none;
+}
+
+.nav-link {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--text-body);
+  position: relative;
+  padding: 0.35rem 0;
+  transition: color var(--transition-fast);
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--text-dark);
+}
+
+.nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2.5px;
+  background-color: var(--primary-green);
+  border-radius: 2px;
+}
+
+/* Nav Actions (Language Switcher + Socials + CTA) */
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.lang-switcher-pill {
+  display: inline-flex;
+  align-items: center;
+  background: #f1f5f9;
+  border-radius: var(--radius-full);
+  padding: 3px;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.lang-btn {
+  padding: 0.25rem 0.65rem;
+  font-size: 0.75rem;
+  font-weight: 800;
+  border-radius: var(--radius-full);
+  color: var(--text-body);
+  transition: all var(--transition-fast);
+  cursor: pointer;
+}
+
+.lang-btn.active {
+  background: var(--primary-green);
+  color: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 210, 106, 0.4);
+}
+
+.nav-socials {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.social-circle-btn {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.04);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-dark);
+  transition: all var(--transition-fast);
+}
+
+.social-circle-btn:hover {
+  background: var(--primary-green);
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.btn-nav-talk {
+  background: var(--primary-green);
+  color: #fff;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  padding: 0.65rem 1.35rem;
+  border-radius: var(--radius-full);
+  box-shadow: 0 4px 15px rgba(0, 210, 106, 0.35);
+  transition: all var(--transition-fast);
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.btn-nav-talk:hover {
+  background: var(--primary-green-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 210, 106, 0.5);
+}
+
+/* Mobile Toggle Button */
+.mobile-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--text-dark);
+  cursor: pointer;
+  padding: 0.4rem;
+  border-radius: 8px;
+}
+
+.mobile-toggle:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+/* Mobile Menu Backdrop Overlay */
+.mobile-menu-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.5);
+  backdrop-filter: blur(4px);
+  z-index: 1090;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.mobile-menu-overlay.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Mobile Nav Drawer */
+.mobile-nav-drawer {
+  position: fixed;
+  top: 0;
+  right: -320px;
+  width: 300px;
+  max-width: 85vw;
+  height: 100vh;
+  background: #ffffff;
+  z-index: 1100;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem 1.6rem;
+  box-shadow: -10px 0 35px rgba(0, 0, 0, 0.15);
+  transition: right 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow-y: auto;
+}
+
+.mobile-nav-drawer.open {
+  right: 0;
+}
+
+.drawer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid #f1f5f9;
+  margin-bottom: 1.5rem;
+}
+
+.drawer-close-btn {
+  background: #f1f5f9;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-dark);
+  cursor: pointer;
+  transition: background var(--transition-fast);
+}
+
+.drawer-close-btn:hover {
+  background: #e2e8f0;
+}
+
+.drawer-nav-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  flex-grow: 1;
+}
+
+.drawer-nav-link {
+  display: block;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-body);
+  padding: 0.65rem 0.85rem;
+  border-radius: 10px;
+  transition: all var(--transition-fast);
+}
+
+.drawer-nav-link:hover,
+.drawer-nav-link.active {
+  background: var(--primary-green-light);
+  color: var(--primary-green-deep);
+}
+
+.drawer-footer {
+  padding-top: 1.5rem;
+  border-top: 1px solid #f1f5f9;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.drawer-socials {
+  display: flex;
+  justify-content: center;
+  gap: 0.8rem;
+}
+
+.drawer-talk-btn {
+  width: 100%;
+  text-align: center;
+  padding: 0.85rem 1rem;
+  font-size: 0.92rem;
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 960px) {
+  .desktop-nav {
+    display: none;
+  }
+
+  .nav-socials {
+    display: none;
+  }
+
+  .desktop-only-btn {
+    display: none;
+  }
+
+  .mobile-toggle {
+    display: block;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-container {
+    padding: 0 1rem;
+  }
+
+  .brand-text {
+    font-size: 1.15rem;
+  }
+
+  .brand-icon-box {
+    width: 32px;
+    height: 32px;
+    font-size: 1.05rem;
+  }
+
+  .lang-btn {
+    padding: 0.2rem 0.5rem;
+    font-size: 0.72rem;
+  }
+}

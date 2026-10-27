@@ -1,0 +1,346 @@
+.about-section {
+  background-color: #ffffff;
+  position: relative;
+  overflow: hidden;
+  padding: 5rem 0;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  align-items: flex-start;
+  gap: 3.5rem;
+}
+
+/* About Left: Portrait with floating stat cards */
+.about-image-col {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0.5rem;
+}
+
+.about-image-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 440px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Organic Green Shape Behind Image */
+.about-photo-blob {
+  position: absolute;
+  width: 390px;
+  height: 390px;
+  background: linear-gradient(135deg, #00d26a 0%, #10b981 100%);
+  border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%;
+  z-index: 1;
+  opacity: 0.88;
+  animation: blobMorph 10s ease-in-out infinite alternate;
+}
+
+.about-photo-frame {
+  position: relative;
+  z-index: 2;
+  width: 370px;
+  height: 480px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.about-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: bottom center;
+  filter: drop-shadow(0 15px 25px rgba(0, 0, 0, 0.15));
+  transition: transform var(--transition-normal);
+}
+
+.about-photo-frame:hover .about-photo {
+  transform: scale(1.05);
+}
+
+/* Floating Stats Pills matching reference */
+.floating-stat-pill {
+  position: absolute;
+  z-index: 3;
+  background: #ffffff;
+  border-radius: var(--radius-full);
+  padding: 0.75rem 1.4rem;
+  box-shadow: var(--shadow-badge);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  transition: transform var(--transition-fast);
+}
+
+.floating-stat-pill:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.stat-pill-top-right {
+  top: 8%;
+  right: -15px;
+}
+
+.stat-pill-mid-left {
+  top: 48%;
+  left: -25px;
+}
+
+.stat-pill-bottom-right {
+  bottom: 6%;
+  right: -15px;
+}
+
+.stat-number-row {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.stat-val {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--primary-green-deep);
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-body);
+  margin-top: 0.2rem;
+  white-space: nowrap;
+}
+
+/* About Right: Text & Details */
+.about-text-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.about-lead {
+  font-size: 1.22rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 0.85rem;
+  line-height: 1.4;
+}
+
+.about-paragraphs {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.about-p {
+  font-size: 0.98rem;
+  color: var(--text-body);
+  line-height: 1.65;
+}
+
+/* Interactive Highlights Grid */
+.about-highlights-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.about-highlight-card {
+  background: #f8fafc;
+  border: 1.5px solid #eef2f6;
+  border-radius: 14px;
+  padding: 0.75rem 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  transition: all var(--transition-fast);
+  cursor: default;
+}
+
+.about-highlight-card:hover {
+  background: #ffffff;
+  border-color: rgba(0, 210, 106, 0.45);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px -4px rgba(0, 210, 106, 0.16);
+}
+
+.about-highlight-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: var(--primary-green-light);
+  color: var(--primary-green-deep);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all var(--transition-fast);
+}
+
+.about-highlight-card:hover .about-highlight-icon {
+  background: var(--primary-green);
+  color: #ffffff;
+  transform: rotate(6deg) scale(1.05);
+}
+
+.about-highlight-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.about-highlight-title {
+  font-size: 0.86rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  line-height: 1.25;
+}
+
+.about-highlight-desc {
+  font-size: 0.76rem;
+  color: var(--text-muted);
+  line-height: 1.35;
+  margin-top: 1px;
+}
+
+@media (max-width: 640px) {
+  .about-highlights-grid {
+    grid-template-columns: 1fr;
+    gap: 0.65rem;
+  }
+}
+
+/* Inline Contact Info */
+.about-contact-inline {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.92rem;
+  color: var(--text-body);
+}
+
+.contact-prompt-text {
+  color: var(--text-body);
+}
+
+.contact-email-link {
+  font-weight: 700;
+  color: var(--primary-green-deep);
+  text-decoration: underline;
+  transition: color var(--transition-fast);
+}
+
+.contact-email-link:hover {
+  color: var(--primary-green);
+}
+
+.callout-email {
+  font-weight: 700;
+  color: var(--primary-green-deep);
+  text-decoration: underline;
+  display: inline-block;
+  margin-top: 0.35rem;
+}
+
+.about-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+
+@keyframes blobMorph {
+  0% {
+    border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%;
+    transform: rotate(0deg);
+  }
+  100% {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    transform: rotate(15deg);
+  }
+}
+
+/* Responsive */
+@media (max-width: 960px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+  }
+  .about-image-col {
+    order: 1;
+  }
+  .about-text-col {
+    order: 2;
+  }
+  .stat-pill-top-right {
+    right: 0;
+  }
+  .stat-pill-mid-left {
+    left: 0;
+  }
+  .stat-pill-bottom-right {
+    right: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-section {
+    padding: 3.5rem 0;
+  }
+  .about-lead {
+    font-size: 1.15rem;
+  }
+  .about-photo-frame {
+    width: 250px;
+    height: 320px;
+  }
+  .about-photo-blob {
+    width: 260px;
+    height: 260px;
+  }
+  .floating-stat-pill {
+    padding: 0.5rem 0.9rem;
+  }
+  .stat-val {
+    font-size: 1.1rem;
+  }
+  .stat-label {
+    font-size: 0.7rem;
+  }
+  .stat-pill-top-right {
+    top: 5%;
+    right: -5px;
+  }
+  .stat-pill-mid-left {
+    top: 45%;
+    left: -5px;
+  }
+  .stat-pill-bottom-right {
+    bottom: 5%;
+    right: -5px;
+  }
+  .about-actions {
+    width: 100%;
+    gap: 0.75rem;
+  }
+  .about-actions .btn-primary,
+  .about-actions .btn-outline {
+    flex: 1;
+    min-width: 130px;
+    padding: 0.75rem 0.9rem;
+    font-size: 0.85rem;
+    justify-content: center;
+  }
+}
