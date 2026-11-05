@@ -269,7 +269,7 @@ export const portfolioContent: Record<Language, PortfolioContent> = {
           'Sistem Antrean Bengkel adalah platform digital yang dirancang untuk mengatasi masalah penumpukan pelanggan dan ketidakteraturan jadwal perbaikan di bengkel. Dengan menggunakan sistem ini, staf bengkel dapat mendaftarkan pelanggan, memantau status pengerjaan secara real-time, dan mengelola giliran servis dengan lebih transparan. Tersedia peran berbeda seperti Kasir dan Owner untuk memudahkan akses informasi dan manajemen bengkel secara profesional.<br/><br/>Demo Aplikasi: <a href="https://host.achmadarha.site" target="_blank" rel="noopener noreferrer">https://host.achmadarha.site</a><br/>Login Admin/Kasir/Owner: <a href="https://host.achmadarha.site/admin" target="_blank" rel="noopener noreferrer">https://host.achmadarha.site/admin</a><br/>Akun Kasir: kasir@bengkel.com<br/>Akun Owner: owner@bengkel.com<br/>Password: password',
         tags: ['Laravel', 'MySQL'],
         imageUrl:
-          'https://s0.wordpress.com/mshots/v1/https%3A%2F%2Fhost.achmadarha.site%2F?w=1280&h=720',
+          'https://i.ibb.co.com/CpFbw6QC/bengkell.png',
         demoUrl: 'https://host.achmadarha.site',
         githubUrl: '',
         featured: true,
@@ -284,7 +284,7 @@ export const portfolioContent: Record<Language, PortfolioContent> = {
           'Sistem Informasi LPPM (Lembaga Penelitian dan Pengabdian kepada Masyarakat) adalah aplikasi berbasis web untuk memfasilitasi seluruh proses pengajuan, review, hingga pelaporan kegiatan penelitian dan pengabdian oleh dosen. Sistem ini dilengkapi dengan portal khusus bagi dosen untuk melacak status usulan mereka, dan portal bagi admin/reviewer untuk melakukan verifikasi, penilaian proposal, serta pengelolaan luaran publikasi.<br/><br/>Demo Aplikasi: <a href="https://lppm.achmadarha.site" target="_blank" rel="noopener noreferrer">https://lppm.achmadarha.site</a><br/><br/>Admin Portal: <a href="https://lppm.achmadarha.site/admin/login" target="_blank" rel="noopener noreferrer">https://lppm.achmadarha.site/admin/login</a><br/>Email: superadmin@lppm.ac.id<br/>Password: password<br/><br/>Dosen Portal: <a href="https://lppm.achmadarha.site/dosen/login" target="_blank" rel="noopener noreferrer">https://lppm.achmadarha.site/dosen/login</a><br/>NIDN: 0802028802<br/>Password: password',
         tags: ['Laravel', 'MySQL'],
         imageUrl:
-          'https://s0.wordpress.com/mshots/v1/https%3A%2F%2Flppm.achmadarha.site%2F?w=1280&h=720',
+          'https://i.ibb.co.com/wNNBRmxS/lppm.png',
         demoUrl: 'https://lppm.achmadarha.site',
         githubUrl: '',
         featured: true,
@@ -299,7 +299,7 @@ export const portfolioContent: Record<Language, PortfolioContent> = {
           'Skripsi Repository adalah sistem perpustakaan digital khusus yang dibangun untuk menyimpan arsip skripsi mahasiswa. Aplikasi ini membantu universitas dalam mendokumentasikan karya tulis secara rapi sekaligus mempermudah akses pencarian literatur akademik oleh publik, mahasiswa, maupun staf dosen. Sistem dilengkapi manajemen akses pengguna yang berbeda-beda untuk memastikan keamanan dan prosedur unggah dokumen sesuai standar akademik kampus.<br/><br/>Demo Aplikasi: <a href="https://skripsi.achmadarha.site/" target="_blank" rel="noopener noreferrer">https://skripsi.achmadarha.site/</a><br/><br/>Admin Portal: <a href="https://skripsi.achmadarha.site/admin" target="_blank" rel="noopener noreferrer">https://skripsi.achmadarha.site/admin</a><br/>Email: admin@repo.ac.id<br/>Password: password<br/><br/>Portal Mahasiswa: <a href="https://skripsi.achmadarha.site/login" target="_blank" rel="noopener noreferrer">https://skripsi.achmadarha.site/login</a><br/>NIM: 20200001<br/>Password: password<br/><br/>Akses Publik: <a href="https://skripsi.achmadarha.site/login" target="_blank" rel="noopener noreferrer">https://skripsi.achmadarha.site/login</a><br/>Email: irwan@gmail.com<br/>Password: password',
         tags: ['Laravel', 'MySQL'],
         imageUrl:
-          'https://s0.wordpress.com/mshots/v1/https%3A%2F%2Fskripsi.achmadarha.site%2F?w=1280&h=720',
+          'https://i.ibb.co.com/7t37YmRb/SKRIPSI.png',
         demoUrl: 'https://skripsi.achmadarha.site/',
         githubUrl: '',
         featured: true,
@@ -314,7 +314,7 @@ export const portfolioContent: Record<Language, PortfolioContent> = {
           'Gudang App adalah sistem manajemen gudang komprehensif yang membantu bisnis mengelola inventaris mereka secara real-time. Aplikasi ini menyediakan fitur untuk melacak stok masuk dan keluar, memantau tingkat persediaan, mengelola riwayat transaksi, dan menghasilkan laporan analitik untuk mendukung pengambilan keputusan bisnis yang lebih baik. Sistem dirancang dengan antarmuka modern, responsif, dan mudah digunakan untuk meningkatkan efisiensi operasional gudang.<br/><br/>Demo Aplikasi: <a href="https://gudang.achmadarha.site" target="_blank" rel="noopener noreferrer">https://gudang.achmadarha.site</a>',
         tags: ['Laravel', 'MySQL', 'JavaScript', 'Tailwind CSS'],
         imageUrl:
-          'https://s0.wordpress.com/mshots/v1/https%3A%2F%2Fgudang.achmadarha.site%2F?w=1280&h=720',
+          'https://i.ibb.co.com/MDrV0gm6/gudang.png',
         demoUrl: 'https://gudang.achmadarha.site',
         githubUrl: '',
         featured: false,
@@ -329,7 +329,7 @@ export const portfolioContent: Record<Language, PortfolioContent> = {
           'ARF Bus adalah sistem reservasi bus komprehensif yang dirancang untuk memudahkan proses pemesanan tiket perjalanan antar kota. Aplikasi ini menyediakan platform yang user-friendly bagi penumpang untuk mencari jadwal, memesan kursi, dan melakukan pembayaran secara online. Bagi operator bus, sistem ini menawarkan alat manajemen yang efisien untuk mengelola armada, rute, serta melacak reservasi dan pendapatan harian.',
         tags: ['Laravel', 'MySQL', 'JavaScript', 'Tailwind CSS'],
         imageUrl:
-          'https://images.unsplash.com/photo-1597852074816-d933c7d2b988?w=1280&h=720&fit=crop',
+          'https://i.ibb.co.com/VWkJpLVV/bus.png" alt="bus" border="0"',
         demoUrl: '',
         githubUrl: '',
         featured: false,
@@ -344,7 +344,7 @@ export const portfolioContent: Record<Language, PortfolioContent> = {
           'HRIS (Human Resources Information System) adalah platform manajemen sumber daya manusia berbasis web yang dirancang untuk merampingkan operasional administrasi personalia. Sistem ini mencakup pengelolaan master data karyawan, pencatatan absensi digital, manajemen alur persetujuan cuti & izin, perhitungan payroll (gaji) otomatis beserta potongan/tunjangan, hingga pelaporan metrik produktivitas kerja untuk divisi HRD secara terpusat dan terstruktur.',
         tags: ['Laravel', 'MySQL', 'PHP', 'Tailwind CSS'],
         imageUrl:
-          'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1280&h=720&fit=crop',
+          'https://i.ibb.co.com/xKWZQDcB/absensi.png',
         demoUrl: '',
         githubUrl: '',
         featured: false,
@@ -359,7 +359,7 @@ export const portfolioContent: Record<Language, PortfolioContent> = {
           'Sistem manajemen restoran & cafe lengkap dengan backend Laravel, admin panel Filament, POS Console, dan aplikasi frontend terintegrasi. Memungkinkan pencatatan pesanan kasir yang cepat, sinkronisasi stok bahan baku secara otomatis, manajemen meja, serta rekapitulasi laporan transaksi penjualan harian dan bulanan secara akurat.',
         tags: ['Laravel', 'Filament PHP', 'MySQL', 'POS Console', 'Tailwind CSS'],
         imageUrl:
-          'https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=1280&h=720&fit=crop',
+          'https://i.ibb.co.com/cSGxt6Xm/COFFE.png',
         demoUrl: '',
         githubUrl: '',
         featured: false,
@@ -657,7 +657,7 @@ export const portfolioContent: Record<Language, PortfolioContent> = {
           'Workshop Queue Management System is a digital platform designed to resolve customer queues and disorganized repair schedules in automotive workshops. Using this system, workshop staff can register customer vehicles, track progress in real-time, and manage service turns transparently. Features dedicated roles for Cashier and Owner to simplify operational oversight.<br/><br/>Demo Application: <a href="https://host.achmadarha.site" target="_blank" rel="noopener noreferrer">https://host.achmadarha.site</a><br/>Admin/Cashier/Owner Login: <a href="https://host.achmadarha.site/admin" target="_blank" rel="noopener noreferrer">https://host.achmadarha.site/admin</a><br/>Cashier Account: kasir@bengkel.com<br/>Owner Account: owner@bengkel.com<br/>Password: password',
         tags: ['Laravel', 'MySQL'],
         imageUrl:
-          'https://s0.wordpress.com/mshots/v1/https%3A%2F%2Fhost.achmadarha.site%2F?w=1280&h=720',
+          'https://i.ibb.co.com/CpFbw6QC/bengkell.png',
         demoUrl: 'https://host.achmadarha.site',
         githubUrl: '',
         featured: true,
@@ -672,7 +672,7 @@ export const portfolioContent: Record<Language, PortfolioContent> = {
           'The LPPM (Institute for Research and Community Service) Information System is a web-based portal facilitating the end-to-end proposal lifecycle—submission, peer review, and final reporting by faculty lecturers. Includes dedicated portals for lecturers to track their proposal status, and an admin/reviewer portal to verify, assess, and monitor publication outputs.<br/><br/>Demo Application: <a href="https://lppm.achmadarha.site" target="_blank" rel="noopener noreferrer">https://lppm.achmadarha.site</a><br/><br/>Admin Portal: <a href="https://lppm.achmadarha.site/admin/login" target="_blank" rel="noopener noreferrer">https://lppm.achmadarha.site/admin/login</a><br/>Email: superadmin@lppm.ac.id<br/>Password: password<br/><br/>Lecturer Portal: <a href="https://lppm.achmadarha.site/dosen/login" target="_blank" rel="noopener noreferrer">https://lppm.achmadarha.site/dosen/login</a><br/>NIDN: 0802028802<br/>Password: password',
         tags: ['Laravel', 'MySQL'],
         imageUrl:
-          'https://s0.wordpress.com/mshots/v1/https%3A%2F%2Flppm.achmadarha.site%2F?w=1280&h=720',
+          'https://i.ibb.co.com/wNNBRmxS/lppm.png',
         demoUrl: 'https://lppm.achmadarha.site',
         githubUrl: '',
         featured: true,
@@ -687,7 +687,7 @@ export const portfolioContent: Record<Language, PortfolioContent> = {
           'Thesis Repository is a digital institutional archive designed to systematically store and organize student theses. It assists universities in archiving academic literature while streamlining thesis discovery and citation access for students, researchers, and faculty members with robust role-based access control.<br/><br/>Demo Application: <a href="https://skripsi.achmadarha.site/" target="_blank" rel="noopener noreferrer">https://skripsi.achmadarha.site/</a><br/><br/>Admin Portal: <a href="https://skripsi.achmadarha.site/admin" target="_blank" rel="noopener noreferrer">https://skripsi.achmadarha.site/admin</a><br/>Email: admin@repo.ac.id<br/>Password: password<br/><br/>Student Portal: <a href="https://skripsi.achmadarha.site/login" target="_blank" rel="noopener noreferrer">https://skripsi.achmadarha.site/login</a><br/>NIM: 20200001<br/>Password: password<br/><br/>Public Access: <a href="https://skripsi.achmadarha.site/login" target="_blank" rel="noopener noreferrer">https://skripsi.achmadarha.site/login</a><br/>Email: irwan@gmail.com<br/>Password: password',
         tags: ['Laravel', 'MySQL'],
         imageUrl:
-          'https://s0.wordpress.com/mshots/v1/https%3A%2F%2Fskripsi.achmadarha.site%2F?w=1280&h=720',
+          'https://i.ibb.co.com/7t37YmRb/SKRIPSI.png',
         demoUrl: 'https://skripsi.achmadarha.site/',
         githubUrl: '',
         featured: true,
@@ -702,7 +702,7 @@ export const portfolioContent: Record<Language, PortfolioContent> = {
           'Gudang App is an enterprise warehouse management system that enables real-time inventory tracking and goods movement management. The application tracks inbound and outbound shipments, monitors minimum stock thresholds, manages audit logs, and produces insightful analytics for supply chain decision-making.<br/><br/>Demo Application: <a href="https://gudang.achmadarha.site" target="_blank" rel="noopener noreferrer">https://gudang.achmadarha.site</a>',
         tags: ['Laravel', 'MySQL', 'JavaScript', 'Tailwind CSS'],
         imageUrl:
-          'https://s0.wordpress.com/mshots/v1/https%3A%2F%2Fgudang.achmadarha.site%2F?w=1280&h=720',
+          'https://i.ibb.co.com/MDrV0gm6/gudang.png',
         demoUrl: 'https://gudang.achmadarha.site',
         githubUrl: '',
         featured: false,
@@ -717,7 +717,7 @@ export const portfolioContent: Record<Language, PortfolioContent> = {
           'ARF Bus is an intercity travel reservation system built to provide an intuitive booking portal for passengers to browse schedules, choose seats, and complete online reservations. For bus fleet operators, it delivers powerful scheduling, route assignment, and real-time ticket revenue tracking tools.',
         tags: ['Laravel', 'MySQL', 'JavaScript', 'Tailwind CSS'],
         imageUrl:
-          'https://images.unsplash.com/photo-1597852074816-d933c7d2b988?w=1280&h=720&fit=crop',
+          'https://i.ibb.co.com/VWkJpLVV/bus.png" alt="bus" border="0"',
         demoUrl: '',
         githubUrl: '',
         featured: false,
@@ -732,7 +732,7 @@ export const portfolioContent: Record<Language, PortfolioContent> = {
           'HRIS (Human Resources Information System) is an enterprise web-based human resource management platform designed to streamline personnel administration workflows. The system features centralized employee master data management, digital attendance tracking, multi-tier leave and permission approval pipelines, automated payroll calculation with allowances/deductions, and analytical productivity reporting for HR departments.',
         tags: ['Laravel', 'MySQL', 'PHP', 'Tailwind CSS'],
         imageUrl:
-          'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1280&h=720&fit=crop',
+          'https://i.ibb.co.com/xKWZQDcB/absensi.png',
         demoUrl: '',
         githubUrl: '',
         featured: false,
@@ -747,7 +747,7 @@ export const portfolioContent: Record<Language, PortfolioContent> = {
           'A complete restaurant and cafe management system featuring a Laravel backend, Filament admin panel, POS Console, and integrated frontend application. Enables high-speed cashier order processing, automated raw ingredient inventory tracking, table management, and precise daily/monthly sales analytics.',
         tags: ['Laravel', 'Filament PHP', 'MySQL', 'POS Console', 'Tailwind CSS'],
         imageUrl:
-          'https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=1280&h=720&fit=crop',
+          'https://i.ibb.co.com/cSGxt6Xm/COFFE.png',
         demoUrl: '',
         githubUrl: '',
         featured: false,
