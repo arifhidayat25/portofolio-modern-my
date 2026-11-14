@@ -181,6 +181,7 @@
   display: flex;
   flex-direction: column;
   gap: 0.35rem;
+  box-sizing: border-box;
   animation: cvFadeIn 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
@@ -213,6 +214,7 @@
   text-decoration: none;
   transition: all var(--transition-fast);
   cursor: pointer;
+  box-sizing: border-box;
 }
 
 .cv-dropdown-item:hover {
@@ -227,6 +229,7 @@
   border-radius: 6px;
   letter-spacing: 0.5px;
   line-height: 1;
+  flex-shrink: 0;
 }
 
 .cv-lang-badge.id {
@@ -245,6 +248,7 @@
   display: flex;
   flex-direction: column;
   flex: 1;
+  min-width: 0;
   text-align: left;
 }
 
@@ -253,12 +257,14 @@
   font-weight: 700;
   color: var(--text-dark);
   line-height: 1.25;
+  white-space: nowrap;
 }
 
 .cv-item-sub {
   font-size: 0.72rem;
   color: var(--text-muted);
   font-weight: 500;
+  white-space: nowrap;
 }
 
 .cv-item-icon {
@@ -464,15 +470,18 @@
   .cv-dropdown-menu {
     left: auto;
     right: 0;
+    min-width: 240px;
+    max-width: calc(100vw - 2rem);
+    box-sizing: border-box;
   }
   .hero-image-col {
     margin-top: 0.5rem;
   }
   .floating-hero-badge.badge-left {
-    left: 5px;
+    left: 8px;
   }
   .floating-hero-badge.badge-right {
-    right: 5px;
+    right: 8px;
   }
 }
 
@@ -490,29 +499,60 @@
     margin-bottom: 1.6rem;
   }
   .hero-actions {
-    gap: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
     width: 100%;
+    max-width: 100%;
+    margin-bottom: 1.5rem;
   }
   .hero-actions .btn-primary,
-  .hero-actions .btn-outline {
-    flex: 1;
-    min-width: 130px;
-    padding: 0.75rem 0.9rem;
-    font-size: 0.85rem;
-  }
   .hero-actions .cv-dropdown-wrapper {
-    flex: 1;
-    min-width: 130px;
+    flex: 1 1 0;
+    min-width: 0;
   }
+  .hero-actions .btn-primary,
   .cv-dropdown-wrapper .cv-dropdown-trigger {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     width: 100%;
+    padding: 0.75rem 0.5rem;
+    font-size: 0.82rem;
+    letter-spacing: 0px;
+    gap: 0.35rem;
+    white-space: nowrap;
+    box-sizing: border-box;
+  }
+  .cv-chevron {
+    margin-left: 0.1rem;
+    flex-shrink: 0;
   }
   .cv-dropdown-menu {
-    left: 50%;
-    right: auto;
-    transform: translateX(-50%);
-    width: calc(100vw - 2.5rem);
-    max-width: 290px;
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    left: auto;
+    transform: none;
+    min-width: 235px;
+    max-width: calc(100vw - 2rem);
+    box-sizing: border-box;
+    padding: 0.45rem;
+  }
+  .cv-dropdown-header {
+    font-size: 0.68rem;
+    padding: 0.25rem 0.5rem;
+  }
+  .cv-dropdown-item {
+    gap: 0.55rem;
+    padding: 0.55rem 0.6rem;
+  }
+  .cv-item-title {
+    font-size: 0.82rem;
+  }
+  .cv-item-sub {
+    font-size: 0.68rem;
   }
   .hero-photo-backdrop {
     width: 270px;
@@ -527,10 +567,30 @@
   }
   .floating-hero-badge.badge-left {
     top: 12%;
-    left: -5px;
+    left: 4px;
   }
   .floating-hero-badge.badge-right {
     bottom: 15%;
-    right: -5px;
+    right: 4px;
+  }
+}
+
+@media (max-width: 340px) {
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.65rem;
+  }
+  .hero-actions .btn-primary,
+  .hero-actions .cv-dropdown-wrapper {
+    width: 100%;
+    flex: none;
+  }
+  .cv-dropdown-menu {
+    left: 0;
+    right: 0;
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
   }
 }
