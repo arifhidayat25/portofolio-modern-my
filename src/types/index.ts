@@ -22,6 +22,10 @@ export interface PersonalInfo {
     technologiesMasteredLabel: string;
   };
   cvUrl?: string;
+  cvUrls?: {
+    id: string;
+    en: string;
+  };
 }
 
 export interface EducationItem {
@@ -97,6 +101,13 @@ export interface UILabels {
     toExplore: string;
     badgeLeft: string;
     badgeRight: string;
+    cvDropdown?: {
+      title: string;
+      idLabel: string;
+      idSub: string;
+      enLabel: string;
+      enSub: string;
+    };
   };
   about: {
     tag: string;

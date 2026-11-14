@@ -26,7 +26,11 @@ export const portfolioContent: Record<Language, PortfolioContent> = {
         technologiesMastered: '12+',
         technologiesMasteredLabel: 'Teknologi Dikuasai',
       },
-      cvUrl: '/cv-achmad-arif.pdf',
+      cvUrl: '/ATS_AchmadArif_Bindo.pdf',
+      cvUrls: {
+        id: '/ATS_AchmadArif_Bindo.pdf',
+        en: '/ATS_AchmadArif_Bing.pdf',
+      },
     },
     ui: {
       nav: {
@@ -43,6 +47,13 @@ export const portfolioContent: Record<Language, PortfolioContent> = {
         viewPortfolio: 'Lihat Portofolio',
         contactMe: 'Unduh CV',
         downloadCv: 'Unduh CV',
+        cvDropdown: {
+          title: 'Pilih Bahasa CV',
+          idLabel: 'Bahasa Indonesia',
+          idSub: 'Format ATS (PDF)',
+          enLabel: 'Bahasa Inggris',
+          enSub: 'Format ATS (PDF)',
+        },
         scrollDown: 'Gulir ke Bawah',
         toExplore: 'untuk Menjelajah',
         badgeLeft: 'Fullstack & Web Dev',
@@ -414,7 +425,11 @@ export const portfolioContent: Record<Language, PortfolioContent> = {
         technologiesMastered: '12+',
         technologiesMasteredLabel: 'Tech Mastered',
       },
-      cvUrl: '/cv-achmad-arif.pdf',
+      cvUrl: '/ATS_AchmadArif_Bing.pdf',
+      cvUrls: {
+        id: '/ATS_AchmadArif_Bindo.pdf',
+        en: '/ATS_AchmadArif_Bing.pdf',
+      },
     },
     ui: {
       nav: {
@@ -431,6 +446,13 @@ export const portfolioContent: Record<Language, PortfolioContent> = {
         viewPortfolio: 'View Portfolio',
         contactMe: 'Download CV',
         downloadCv: 'Download CV',
+        cvDropdown: {
+          title: 'Select CV Language',
+          idLabel: 'Indonesian',
+          idSub: 'ATS Format (PDF)',
+          enLabel: 'English',
+          enSub: 'ATS Format (PDF)',
+        },
         scrollDown: 'Scroll Down',
         toExplore: 'to Explore',
         badgeLeft: 'Fullstack & Web Dev',

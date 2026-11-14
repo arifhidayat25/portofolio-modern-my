@@ -1,11 +1,39 @@
-import React from 'react';
-import { Terminal, Download } from 'lucide-react';
+import React, { useState, useRef, useEffect } from 'react';
+import { Terminal, Download, ChevronDown } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 import './Hero.css';
 
 export const Hero: React.FC = () => {
-  const { content } = useLanguage();
+  const { content, language } = useLanguage();
   const { personalInfo, ui } = content;
+  const [isCvOpen, setIsCvOpen] = useState(false);
+  const cvDropdownRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (cvDropdownRef.current && !cvDropdownRef.current.contains(event.target as Node)) {
+        setIsCvOpen(false);
+      }
+    };
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setIsCvOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    document.addEventListener('keydown', handleKeyDown);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener('keydown', handleKeyDown);
+    };
+  }, []);
+
+  const cvFiles = {
+    id: personalInfo.cvUrls?.id || '/ATS_AchmadArif_Bindo.pdf',
+    en: personalInfo.cvUrls?.en || '/ATS_AchmadArif_Bing.pdf',
+  };
 
   return (
     <section id="home" className="hero-section">
@@ -92,16 +120,71 @@ export const Hero: React.FC = () => {
             <a href="#projects" className="btn-primary">
               {ui.hero.viewPortfolio}
             </a>
-            <a
-              href={personalInfo.cvUrl || '/cv-achmad-arif.pdf'}
-              download="CV-Achmad-Arif-Hidayat.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-outline"
-            >
-              <Download size={16} style={{ marginRight: '0.4rem' }} />
-              {ui.hero.downloadCv || ui.hero.contactMe || 'Unduh CV'}
-            </a>
+
+            <div className="cv-dropdown-wrapper" ref={cvDropdownRef}>
+              <button
+                type="button"
+                className={`btn-outline cv-dropdown-trigger ${isCvOpen ? 'active' : ''}`}
+                onClick={() => setIsCvOpen((prev) => !prev)}
+                aria-expanded={isCvOpen}
+                aria-haspopup="true"
+                aria-label={ui.hero.downloadCv || 'Unduh CV'}
+              >
+                <Download size={16} />
+                <span>{ui.hero.downloadCv || ui.hero.contactMe || 'Unduh CV'}</span>
+                <ChevronDown size={14} className={`cv-chevron ${isCvOpen ? 'rotated' : ''}`} />
+              </button>
+
+              {isCvOpen && (
+                <div className="cv-dropdown-menu" role="menu">
+                  <div className="cv-dropdown-header">
+                    {ui.hero.cvDropdown?.title || (language === 'id' ? 'Pilih Bahasa CV' : 'Select CV Language')}
+                  </div>
+
+                  <a
+                    href={cvFiles.id}
+                    download="ATS_AchmadArif_Bindo.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="cv-dropdown-item"
+                    role="menuitem"
+                    onClick={() => setIsCvOpen(false)}
+                  >
+                    <span className="cv-lang-badge id">ID</span>
+                    <div className="cv-item-text">
+                      <span className="cv-item-title">
+                        {ui.hero.cvDropdown?.idLabel || 'Bahasa Indonesia'}
+                      </span>
+                      <span className="cv-item-sub">
+                        {ui.hero.cvDropdown?.idSub || 'Format ATS (PDF)'}
+                      </span>
+                    </div>
+                    <Download size={14} className="cv-item-icon" />
+                  </a>
+
+                  <a
+                    href={cvFiles.en}
+                    download="ATS_AchmadArif_Bing.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="cv-dropdown-item"
+                    role="menuitem"
+                    onClick={() => setIsCvOpen(false)}
+                  >
+                    <span className="cv-lang-badge en">EN</span>
+                    <div className="cv-item-text">
+                      <span className="cv-item-title">
+                        {ui.hero.cvDropdown?.enLabel || 'English'}
+                      </span>
+                      <span className="cv-item-sub">
+                        {ui.hero.cvDropdown?.enSub || 'ATS Format (PDF)'}
+                      </span>
+                    </div>
+                    <Download size={14} className="cv-item-icon" />
+                  </a>
+                </div>
+              )}
+            </div>
           </div>
 
           <a href="#about" className="hero-scroll-prompt">
