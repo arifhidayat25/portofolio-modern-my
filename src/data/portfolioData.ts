@@ -56,8 +56,8 @@ export const portfolioContent: Record<Language, PortfolioContent> = {
         },
         scrollDown: 'Gulir ke Bawah',
         toExplore: 'untuk Menjelajah',
-        badgeLeft: 'Fullstack & Web Dev',
-        badgeRight: 'Network & IT Systems',
+        badgeLeft: 'IT Support & Systems',
+        badgeRight: 'Network & Infrastructure',
       },
       about: {
         tag: 'Izinkan saya memperkenalkan diri',
@@ -106,7 +106,7 @@ export const portfolioContent: Record<Language, PortfolioContent> = {
         desc: 'Kombinasi kemampuan pengembangan aplikasi modern, manajemen sistem IT, dan perancangan arsitektur jaringan yang handal.',
         techMasteryTag: 'Penguasaan Teknis',
         techMasteryTitle: 'Skills & Tech Stack',
-        categories: ['Semua', 'Languages', 'Frontend & Backend', 'DevOps & Cloud', 'Networking & Systems'],
+        categories: ['Semua', 'IT Support & Systems', 'Networking', 'Cloud & Server', 'Web Development'],
       },
       projects: {
         tag: 'Sorotan Portofolio',
@@ -154,20 +154,11 @@ export const portfolioContent: Record<Language, PortfolioContent> = {
     },
     serviceCardsData: [
       {
-        id: 'web-dev',
-        projectsCount: '',
-        title: 'Web & Fullstack Dev',
-        description:
-          'Membangun aplikasi web interaktif, responsif, dan scalable dengan React, TypeScript, Node.js, dan arsitektur REST API modern.',
-        icon: 'Code2',
-        isFeatured: true,
-      },
-      {
         id: 'it-support',
         projectsCount: '',
         title: 'System & IT Support',
         description:
-          'Pemeliharaan perangkat keras & lunak, troubleshooting workstation, manajemen sistem operasi Linux & Windows, serta backup recovery.',
+          'Pemeliharaan hardware & software, troubleshooting workstation dan periferal, instalasi OS Linux & Windows, serta penanganan helpdesk end-user.',
         icon: 'Laptop',
         isFeatured: true,
       },
@@ -176,17 +167,26 @@ export const portfolioContent: Record<Language, PortfolioContent> = {
         projectsCount: '',
         title: 'Network Administration',
         description:
-          'Konfigurasi jaringan LAN/WAN, routing & switching Mikrotik/Cisco, setup VLAN, firewall security, dan monitoring bandwidth jaringan.',
+          'Konfigurasi jaringan LAN/WAN, routing & switching Mikrotik/Cisco, segmentasi VLAN, routing protocol, firewall security, dan monitoring konektivitas.',
         icon: 'Network',
         isFeatured: true,
       },
       {
         id: 'cloud-devops',
         projectsCount: '',
-        title: 'Cloud & Database Mgmt',
+        title: 'Server & Cloud Infrastructure',
         description:
-          'Manajemen database relasional (MySQL, PostgreSQL), containerization dengan Docker, serta deployment server cloud yang handal.',
+          'Deployment server Linux, manajemen web server Nginx, containerization dengan Docker, serta pengelolaan basis data relasional (MySQL, PostgreSQL).',
         icon: 'Server',
+        isFeatured: true,
+      },
+      {
+        id: 'web-dev',
+        projectsCount: '',
+        title: 'Web & Application Dev',
+        description:
+          'Pengembangan aplikasi web modern, dashboard sistem internal, dan integrasi backend REST API menggunakan Laravel, React, dan Tailwind CSS.',
+        icon: 'Code2',
         isFeatured: true,
       },
     ],
@@ -249,28 +249,65 @@ export const portfolioContent: Record<Language, PortfolioContent> = {
         ],
         skills: ['IT Support', 'Hardware Troubleshooting', 'Server Installation', 'Web Development', 'Database Management', 'Data Processing'],
       },
+      {
+        id: 'exp-2',
+        role: 'Admin & Teknisi Jaringan',
+        company: 'iBill Network',
+        period: 'Juli 2024 - Agustus 2024',
+        location: 'Malang, Indonesia',
+        description: [
+          'Mengelola data dan administrasi billing untuk 100+ pelanggan aktif menggunakan Microsoft Excel, termasuk registrasi baru, pembaruan paket, dan verifikasi pembayaran bulanan.',
+          'Bertindak sebagai pusat penerima laporan gangguan (helpdesk), mengelola jadwal kunjungan perbaikan harian, serta menyusun rekap riwayat kendala pelanggan.',
+          'Melakukan instalasi jaringan internet rata-rata 5 titik per minggu, mulai dari penarikan kabel, hingga pengaturan SSID, IP, dan koneksi PPPoE/Hotspot pada router pelanggan.',
+          'Menangani troubleshooting tingkat pertama baik secara remote maupun kunjungan langsung ke lokasi pelanggan untuk meminimalkan downtime koneksi.',
+        ],
+        skills: ['Network Administration', 'PPPoE & Hotspot', 'Router Configuration', 'Network Troubleshooting', 'IT Helpdesk', 'Billing Administration'],
+      },
+      {
+        id: 'exp-3',
+        role: 'IT Support (Intern)',
+        company: 'KRI Bilqis Clinic Center',
+        period: 'Juli 2023 - Agustus 2023',
+        location: 'Malang, Indonesia',
+        description: [
+          'Membantu pemeliharaan rutin dan troubleshooting dasar pada komputer operasional, printer, serta perangkat pendukung di area pendaftaran dan pelayanan klinik.',
+          'Mendukung kestabilan jaringan lokal (LAN/Wi-Fi) serta membantu staf menangani kendala teknis ringan pada penggunaan aplikasi operasional klinik sehari-hari.',
+        ],
+        skills: ['IT Support', 'Hardware Troubleshooting', 'Printer Maintenance', 'LAN & Wi-Fi', 'End-User Support'],
+      },
     ],
     skillsData: [
-      { name: 'JavaScript / TypeScript', category: 'Languages', proficiency: 92 },
-      { name: 'HTML5 & CSS3 / Modern Web', category: 'Languages', proficiency: 95 },
-      { name: 'PHP / Modern Stack', category: 'Languages', proficiency: 84 },
-      { name: 'Python / Scripting', category: 'Languages', proficiency: 80 },
-      { name: 'SQL (MySQL & Postgres)', category: 'Languages', proficiency: 88 },
-      { name: 'React & Vite', category: 'Frontend & Backend', proficiency: 92 },
-      { name: 'Node.js & Express', category: 'Frontend & Backend', proficiency: 86 },
-      { name: 'REST API & GraphQL', category: 'Frontend & Backend', proficiency: 90 },
-      { name: 'Tailwind & Modern CSS', category: 'Frontend & Backend', proficiency: 94 },
-      { name: 'Linux Server (Ubuntu/Debian)', category: 'DevOps & Cloud', proficiency: 89 },
-      { name: 'Docker & Containerization', category: 'DevOps & Cloud', proficiency: 82 },
-      { name: 'Nginx Web Server', category: 'DevOps & Cloud', proficiency: 85 },
-      { name: 'Git & GitHub Workflow', category: 'DevOps & Cloud', proficiency: 90 },
-      { name: 'Mikrotik RouterOS & Winbox', category: 'Networking & Systems', proficiency: 88 },
-      { name: 'Cisco Routing & Switching', category: 'Networking & Systems', proficiency: 82 },
-      { name: 'VLAN, VPN & Firewall Security', category: 'Networking & Systems', proficiency: 85 },
-      { name: 'Hardware Repair & Diagnostics', category: 'Networking & Systems', proficiency: 92 },
+      // IT Support & Systems
+      { name: 'Hardware Repair & PC Diagnostics', category: 'IT Support & Systems', proficiency: 92 },
+      { name: 'Workstation & Peripherals Troubleshooting', category: 'IT Support & Systems', proficiency: 95 },
+      { name: 'Windows & Linux OS Administration', category: 'IT Support & Systems', proficiency: 90 },
+      { name: 'IT Helpdesk & End-User Support', category: 'IT Support & Systems', proficiency: 92 },
+      { name: 'Printer & Office Device Maintenance', category: 'IT Support & Systems', proficiency: 88 },
+
+      // Networking
+      { name: 'LAN/WAN Cabling & Wi-Fi Setup', category: 'Networking', proficiency: 90 },
+      { name: 'Mikrotik RouterOS & Winbox', category: 'Networking', proficiency: 88 },
+      { name: 'Cisco Routing & Switching (Packet Tracer)', category: 'Networking', proficiency: 82 },
+      { name: '802.1Q VLAN, NAT & Inter-VLAN Routing', category: 'Networking', proficiency: 85 },
+      { name: 'PPPoE, Hotspot & Access Control (ACL)', category: 'Networking', proficiency: 86 },
+
+      // Cloud & Server
+      { name: 'Linux Server (Ubuntu/Debian)', category: 'Cloud & Server', proficiency: 89 },
+      { name: 'Database (MySQL & PostgreSQL)', category: 'Cloud & Server', proficiency: 88 },
+      { name: 'Nginx Web Server', category: 'Cloud & Server', proficiency: 85 },
+      { name: 'Docker & Containerization', category: 'Cloud & Server', proficiency: 82 },
+      { name: 'Git & GitHub Workflow', category: 'Cloud & Server', proficiency: 90 },
+
+      // Web Development
+      { name: 'PHP & Modern Frameworks (Laravel)', category: 'Web Development', proficiency: 84 },
+      { name: 'JavaScript / TypeScript', category: 'Web Development', proficiency: 88 },
+      { name: 'React & Modern Frontend', category: 'Web Development', proficiency: 88 },
+      { name: 'HTML5, CSS3 & Tailwind CSS', category: 'Web Development', proficiency: 94 },
+      { name: 'REST API & Web Integration', category: 'Web Development', proficiency: 88 },
+      { name: 'Python / Scripting Basics', category: 'Web Development', proficiency: 80 },
     ],
     projectsData: [
-      {
+            {
         id: 'proj-1',
         title: 'Sistem Antrean Bengkel',
         category: 'Web App',
@@ -282,6 +319,20 @@ export const portfolioContent: Record<Language, PortfolioContent> = {
         imageUrl:
           'https://i.ibb.co.com/CpFbw6QC/bengkell.png',
         demoUrl: 'https://host.achmadarha.site',
+        githubUrl: '',
+        featured: true,
+      },
+      {
+        id: 'proj-9',
+        title: 'Infrastruktur Jaringan Enterprise Puskesmas 2 Lantai',
+        category: 'Networking',
+        description:
+          'Perancangan & simulasi infrastruktur jaringan Puskesmas 2 lantai dengan segmentasi VLAN, Inter-VLAN Routing (SVI), DHCP, NAT, Extended ACL, Port Security, SSHv2, dan monitoring CCTV IoT menggunakan Cisco Packet Tracer.',
+        longDescription:
+          'Fasilitas pelayanan kesehatan tingkat pertama seperti Puskesmas menangani dua jenis lalu lintas jaringan dengan tingkat sensitivitas yang bertolak belakang: operasional klinis-manajerial (SIMPUS, bridging PCare BPJS, dan CCTV) serta akses publik (Wi-Fi ruang tunggu pasien). Proyek ini merancang dan mensimulasikan infrastruktur jaringan Puskesmas 2 Lantai yang memisahkan lalu lintas berdasarkan fungsi ruang, mengamankan aset kritis dengan kebijakan access control berlapis, serta memastikan konektivitas lokal dan eksternal (bridging BPJS) berjalan stabil.',
+        tags: ['Cisco Packet Tracer', '802.1Q VLAN', 'Inter-VLAN SVI', 'NAT/PAT', 'Extended ACL', 'Port Security', 'SSHv2', 'DHCP', 'IoT CCTV'],
+        imageUrl: '/projects/cisco-topology.PNG',
+        demoUrl: '',
         githubUrl: '',
         featured: true,
       },
@@ -389,7 +440,7 @@ export const portfolioContent: Record<Language, PortfolioContent> = {
         demoUrl: '',
         githubUrl: '',
         featured: false,
-      },
+      }
     ],
     socialLinks: [
       { name: 'GitHub', url: 'https://github.com/arifhidayat25', icon: 'Github' },
@@ -455,8 +506,8 @@ export const portfolioContent: Record<Language, PortfolioContent> = {
         },
         scrollDown: 'Scroll Down',
         toExplore: 'to Explore',
-        badgeLeft: 'Fullstack & Web Dev',
-        badgeRight: 'Network & IT Systems',
+        badgeLeft: 'IT Support & Systems',
+        badgeRight: 'Network & Infrastructure',
       },
       about: {
         tag: 'Allow me to introduce myself',
@@ -505,7 +556,7 @@ export const portfolioContent: Record<Language, PortfolioContent> = {
         desc: 'A robust blend of modern application development, IT systems management, and reliable network architecture design.',
         techMasteryTag: 'Technical Mastery',
         techMasteryTitle: 'Skills & Tech Stack',
-        categories: ['All', 'Languages', 'Frontend & Backend', 'DevOps & Cloud', 'Networking & Systems'],
+        categories: ['All', 'IT Support & Systems', 'Networking', 'Cloud & Server', 'Web Development'],
       },
       projects: {
         tag: 'Portfolio Spotlight',
@@ -553,39 +604,39 @@ export const portfolioContent: Record<Language, PortfolioContent> = {
     },
     serviceCardsData: [
       {
-        id: 'web-dev',
-        projectsCount: '',
-        title: 'Web & Fullstack Dev',
-        description:
-          'Building interactive, responsive, and scalable web applications with React, TypeScript, Node.js, and modern REST API architectures.',
-        icon: 'Code2',
-        isFeatured: true,
-      },
-      {
         id: 'it-support',
         projectsCount: '',
         title: 'System & IT Support',
         description:
-          'Hardware & software maintenance, workstation troubleshooting, Linux & Windows OS management, and automated backup recovery.',
+          'Hardware & software maintenance, workstation and peripheral troubleshooting, Linux & Windows OS deployment, and end-user helpdesk support.',
         icon: 'Laptop',
         isFeatured: true,
       },
       {
         id: 'network-admin',
-        projectsCount: 'S',
+        projectsCount: '',
         title: 'Network Administration',
         description:
-          'LAN/WAN network configuration, Mikrotik/Cisco routing & switching, VLAN setups, firewall security, and bandwidth monitoring.',
+          'LAN/WAN network design, Mikrotik & Cisco routing/switching, VLAN segmentation, routing protocols, firewall rules, and link monitoring.',
         icon: 'Network',
         isFeatured: true,
       },
       {
         id: 'cloud-devops',
         projectsCount: '',
-        title: 'Cloud & Database Mgmt',
+        title: 'Server & Cloud Infrastructure',
         description:
-          'Relational database management (MySQL, PostgreSQL), containerization with Docker, and dependable cloud server deployment.',
+          'Linux server administration, Nginx web server deployment, Docker containerization, and relational database management (MySQL, PostgreSQL).',
         icon: 'Server',
+        isFeatured: true,
+      },
+      {
+        id: 'web-dev',
+        projectsCount: '',
+        title: 'Web & Application Dev',
+        description:
+          'Modern web application engineering, internal operational dashboards, and backend REST API integrations with Laravel, React, and Tailwind CSS.',
+        icon: 'Code2',
         isFeatured: true,
       },
     ],
@@ -648,28 +699,65 @@ export const portfolioContent: Record<Language, PortfolioContent> = {
         ],
         skills: ['IT Support', 'Hardware Troubleshooting', 'Server Installation', 'Web Development', 'Database Management', 'Data Processing'],
       },
+      {
+        id: 'exp-2',
+        role: 'Network Administrator & Technician',
+        company: 'iBill Network',
+        period: 'July 2024 - August 2024',
+        location: 'Malang, Indonesia',
+        description: [
+          'Managed billing records and customer account administration for 100+ active subscribers using Microsoft Excel, including new registrations, package upgrades, and monthly payment reconciliations.',
+          'Served as the primary technical helpdesk dispatcher, organizing daily on-site repair schedules and documenting detailed customer issue history.',
+          'Deployed network installations averaging 5 sites weekly, handling fiber/LAN cabling, router provisioning, SSID/IP configuration, and PPPoE/Hotspot setups.',
+          'Provided first-tier technical troubleshooting remotely and through on-site customer visits to minimize internet connection downtime.',
+        ],
+        skills: ['Network Administration', 'PPPoE & Hotspot', 'Router Configuration', 'Network Troubleshooting', 'IT Helpdesk', 'Billing Administration'],
+      },
+      {
+        id: 'exp-3',
+        role: 'IT Support (Intern)',
+        company: 'KRI Bilqis Clinic Center',
+        period: 'July 2023 - August 2023',
+        location: 'Malang, Indonesia',
+        description: [
+          'Assisted in routine maintenance and fundamental troubleshooting for operational workstations, printers, and peripheral hardware across reception and clinic examination rooms.',
+          'Maintained local area network (LAN/Wi-Fi) stability and supported clinic staff with basic technical inquiries regarding daily clinical management applications.',
+        ],
+        skills: ['IT Support', 'Hardware Troubleshooting', 'Printer Maintenance', 'LAN & Wi-Fi', 'End-User Support'],
+      },
     ],
     skillsData: [
-      { name: 'JavaScript / TypeScript', category: 'Languages', proficiency: 92 },
-      { name: 'HTML5 & CSS3 / Modern Web', category: 'Languages', proficiency: 95 },
-      { name: 'PHP / Modern Stack', category: 'Languages', proficiency: 84 },
-      { name: 'Python / Scripting', category: 'Languages', proficiency: 80 },
-      { name: 'SQL (MySQL & Postgres)', category: 'Languages', proficiency: 88 },
-      { name: 'React & Vite', category: 'Frontend & Backend', proficiency: 92 },
-      { name: 'Node.js & Express', category: 'Frontend & Backend', proficiency: 86 },
-      { name: 'REST API & GraphQL', category: 'Frontend & Backend', proficiency: 90 },
-      { name: 'Tailwind & Modern CSS', category: 'Frontend & Backend', proficiency: 94 },
-      { name: 'Linux Server (Ubuntu/Debian)', category: 'DevOps & Cloud', proficiency: 89 },
-      { name: 'Docker & Containerization', category: 'DevOps & Cloud', proficiency: 82 },
-      { name: 'Nginx Web Server', category: 'DevOps & Cloud', proficiency: 85 },
-      { name: 'Git & GitHub Workflow', category: 'DevOps & Cloud', proficiency: 90 },
-      { name: 'Mikrotik RouterOS & Winbox', category: 'Networking & Systems', proficiency: 88 },
-      { name: 'Cisco Routing & Switching', category: 'Networking & Systems', proficiency: 82 },
-      { name: 'VLAN, VPN & Firewall Security', category: 'Networking & Systems', proficiency: 85 },
-      { name: 'Hardware Repair & Diagnostics', category: 'Networking & Systems', proficiency: 92 },
+      // IT Support & Systems
+      { name: 'Hardware Repair & PC Diagnostics', category: 'IT Support & Systems', proficiency: 92 },
+      { name: 'Workstation & Peripherals Troubleshooting', category: 'IT Support & Systems', proficiency: 95 },
+      { name: 'Windows & Linux OS Administration', category: 'IT Support & Systems', proficiency: 90 },
+      { name: 'IT Helpdesk & End-User Support', category: 'IT Support & Systems', proficiency: 92 },
+      { name: 'Printer & Office Device Maintenance', category: 'IT Support & Systems', proficiency: 88 },
+
+      // Networking
+      { name: 'LAN/WAN Cabling & Wi-Fi Setup', category: 'Networking', proficiency: 90 },
+      { name: 'Mikrotik RouterOS & Winbox', category: 'Networking', proficiency: 88 },
+      { name: 'Cisco Routing & Switching (Packet Tracer)', category: 'Networking', proficiency: 82 },
+      { name: '802.1Q VLAN, NAT & Inter-VLAN Routing', category: 'Networking', proficiency: 85 },
+      { name: 'PPPoE, Hotspot & Access Control (ACL)', category: 'Networking', proficiency: 86 },
+
+      // Cloud & Server
+      { name: 'Linux Server (Ubuntu/Debian)', category: 'Cloud & Server', proficiency: 89 },
+      { name: 'Database (MySQL & PostgreSQL)', category: 'Cloud & Server', proficiency: 88 },
+      { name: 'Nginx Web Server', category: 'Cloud & Server', proficiency: 85 },
+      { name: 'Docker & Containerization', category: 'Cloud & Server', proficiency: 82 },
+      { name: 'Git & GitHub Workflow', category: 'Cloud & Server', proficiency: 90 },
+
+      // Web Development
+      { name: 'PHP & Modern Frameworks (Laravel)', category: 'Web Development', proficiency: 84 },
+      { name: 'JavaScript / TypeScript', category: 'Web Development', proficiency: 88 },
+      { name: 'React & Modern Frontend', category: 'Web Development', proficiency: 88 },
+      { name: 'HTML5, CSS3 & Tailwind CSS', category: 'Web Development', proficiency: 94 },
+      { name: 'REST API & Web Integration', category: 'Web Development', proficiency: 88 },
+      { name: 'Python / Scripting Basics', category: 'Web Development', proficiency: 80 },
     ],
     projectsData: [
-      {
+            {
         id: 'proj-1',
         title: 'Workshop Queue Management System',
         category: 'Web App',
@@ -681,6 +769,20 @@ export const portfolioContent: Record<Language, PortfolioContent> = {
         imageUrl:
           'https://i.ibb.co.com/CpFbw6QC/bengkell.png',
         demoUrl: 'https://host.achmadarha.site',
+        githubUrl: '',
+        featured: true,
+      },
+      {
+        id: 'proj-9',
+        title: 'Puskesmas (Primary Healthcare) 2-Floor Enterprise Network',
+        category: 'Networking',
+        description:
+          'Full design & simulation of a 2-floor primary healthcare center network with VLAN segmentation, Inter-VLAN Routing (SVI), DHCP, NAT, Extended ACL, Port Security, SSHv2, and centralized IoT CCTV monitoring using Cisco Packet Tracer.',
+        longDescription:
+          'Primary healthcare facilities handle two categories of network traffic with contrasting sensitivity levels: clinical-administrative operations (SIMPUS EMR, PCare BPJS bridging, and CCTV monitoring) and public access (patient waiting room Wi-Fi). This project designs and simulates a 2-floor Puskesmas network that segregates traffic by function, secures critical assets with layered access control policies, and ensures stable local and external connectivity.',
+        tags: ['Cisco Packet Tracer', '802.1Q VLAN', 'Inter-VLAN SVI', 'NAT/PAT', 'Extended ACL', 'Port Security', 'SSHv2', 'DHCP', 'IoT CCTV'],
+        imageUrl: '/projects/cisco-topology.PNG',
+        demoUrl: '',
         githubUrl: '',
         featured: true,
       },
@@ -788,7 +890,7 @@ export const portfolioContent: Record<Language, PortfolioContent> = {
         demoUrl: '',
         githubUrl: '',
         featured: false,
-      },
+      }
     ],
     socialLinks: [
       { name: 'GitHub', url: 'https://github.com/arifhidayat25', icon: 'Github' },

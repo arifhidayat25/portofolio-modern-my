@@ -1,16 +1,18 @@
-import React, { useState } from 'react';
-import { ExternalLink, X, Eye } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { ExternalLink, X, Eye, ZoomIn } from 'lucide-react';
 import { GithubIcon } from './SocialIcons';
 import { useLanguage } from '../context/LanguageContext';
 import type { ProjectItem } from '../types';
 import './Projects.css';
 
 export const Projects: React.FC = () => {
-  const { content } = useLanguage();
+  const { content, language } = useLanguage();
   const { projectsData, ui } = content;
 
   const [activeFilter, setActiveFilter] = useState<string>('All');
   const [activeModalProject, setActiveModalProject] = useState<ProjectItem | null>(null);
+  const [isImageZoomed, setIsImageZoomed] = useState<boolean>(false);
+  const [showAll, setShowAll] = useState<boolean>(false);
 
   const availableCategories = Array.from(new Set(projectsData.map((item) => item.category)));
   const filterOptions = [ui.projects.allCategory, ...availableCategories];
@@ -20,6 +22,12 @@ export const Projects: React.FC = () => {
   const filteredProjects = isAll
     ? projectsData
     : projectsData.filter((item) => item.category === activeFilter);
+
+  // Reset showAll whenever filter changes
+  useEffect(() => { setShowAll(false); }, [activeFilter]);
+
+  const INITIAL_COUNT = 6;
+  const displayedProjects = showAll ? filteredProjects : filteredProjects.slice(0, INITIAL_COUNT);
 
   return (
     <section id="projects" className="projects-section">
@@ -51,7 +59,7 @@ export const Projects: React.FC = () => {
 
         {/* Projects Grid */}
         <div className="projects-grid">
-          {filteredProjects.map((project) => (
+          {displayedProjects.map((project) => (
             <article
               key={project.id}
               className="project-card"
@@ -122,34 +130,98 @@ export const Projects: React.FC = () => {
           ))}
         </div>
 
+        {/* Show More / Show Less Button */}
+        {filteredProjects.length > INITIAL_COUNT && (
+          <div className="projects-show-more-wrapper">
+            <button
+              type="button"
+              className="projects-show-more-btn"
+              onClick={() => setShowAll((prev) => !prev)}
+            >
+              {showAll
+                ? (language === 'id' ? '← Sembunyikan' : '← Show Less')
+                : (language === 'id'
+                    ? `Lihat Semua ${filteredProjects.length} Proyek →`
+                    : `View All ${filteredProjects.length} Projects →`)
+              }
+            </button>
+          </div>
+        )}
+
         {/* Project Detail Modal */}
         {activeModalProject && (
-          <div className="modal-overlay" onClick={() => setActiveModalProject(null)}>
+          <div
+            className="modal-overlay"
+            onClick={() => {
+              setActiveModalProject(null);
+              setIsImageZoomed(false);
+            }}
+          >
             <div className="modal-dialog" onClick={(e) => e.stopPropagation()}>
               <button
                 type="button"
                 className="modal-close-btn"
-                onClick={() => setActiveModalProject(null)}
+                onClick={() => {
+                  setActiveModalProject(null);
+                  setIsImageZoomed(false);
+                }}
                 aria-label="Close modal"
               >
                 <X size={20} />
               </button>
 
-              <img
-                src={activeModalProject.imageUrl}
-                alt={activeModalProject.title}
-                className="modal-img"
-                width={800}
-                height={450}
-                loading="lazy"
-                decoding="async"
-              />
+              <div
+                className="modal-img-container"
+                onClick={() => setIsImageZoomed(true)}
+                title="Klik untuk memperbesar diagram"
+              >
+                <img
+                  src={activeModalProject.imageUrl}
+                  alt={activeModalProject.title}
+                  className="modal-img"
+                  width={800}
+                  height={450}
+                  loading="lazy"
+                  decoding="async"
+                />
+                <div className="modal-img-zoom-badge">
+                  <ZoomIn size={15} />
+                  <span>Perbesar Diagram</span>
+                </div>
+              </div>
 
               <div className="modal-body">
                 <span className="section-tag">{activeModalProject.category}</span>
                 <h3 style={{ fontSize: '1.6rem', fontWeight: 800, color: 'var(--text-dark)', marginBottom: '0.8rem' }}>
                   {activeModalProject.title}
                 </h3>
+
+                {activeModalProject.id === 'proj-9' && (
+                  <div className="modal-case-study-banner">
+                    <div className="modal-case-banner-info">
+                      <span className="banner-tag">Enterprise Case Study</span>
+                      <h4 className="banner-title">
+                        {language === 'id' ? 'Halaman Detail Studi Kasus Lengkap' : 'Full In-Depth Case Study Page'}
+                      </h4>
+                      <p className="banner-desc">
+                        {language === 'id'
+                          ? 'Lihat arsitektur topologi interaktif, tabel alokasi IP/VLAN lengkap, cuplikan konfigurasi CLI, dan matriks pengujian keamanan.'
+                          : 'Explore interactive topology diagrams, full IP/VLAN tables, Cisco CLI snippets, and security testing matrices.'}
+                      </p>
+                    </div>
+                    <button
+                      type="button"
+                      className="modal-case-btn"
+                      onClick={() => {
+                        setActiveModalProject(null);
+                        window.location.hash = '#/case-study/cisco';
+                      }}
+                    >
+                      <ExternalLink size={16} />
+                      <span>{language === 'id' ? 'Lihat Detail' : 'View Details'}</span>
+                    </button>
+                  </div>
+                )}
 
                 <div
                   className="modal-long-desc"
@@ -172,6 +244,31 @@ export const Projects: React.FC = () => {
                 </div>
 
                 <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+                  {activeModalProject.id === 'proj-9' && (
+                    <button
+                      type="button"
+                      className="btn-primary"
+                      onClick={() => {
+                        setActiveModalProject(null);
+                        window.location.hash = '#/case-study/cisco';
+                      }}
+                      style={{
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        gap: '0.5rem',
+                        background: 'var(--primary-green)',
+                        color: '#ffffff',
+                        border: 'none',
+                        padding: '0.65rem 1.3rem',
+                        borderRadius: '9999px',
+                        fontWeight: 700,
+                        cursor: 'pointer',
+                      }}
+                    >
+                      <ExternalLink size={16} />
+                      {language === 'id' ? 'Buka Halaman Detail Penuh →' : 'Open Full Case Study Page →'}
+                    </button>
+                  )}
                   {activeModalProject.demoUrl && activeModalProject.demoUrl.trim() !== '' && activeModalProject.demoUrl !== '#' && (
                     <a
                       href={activeModalProject.demoUrl}
@@ -195,6 +292,31 @@ export const Projects: React.FC = () => {
                     </a>
                   )}
                 </div>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* High-Resolution Diagram Lightbox */}
+        {isImageZoomed && activeModalProject && (
+          <div className="lightbox-overlay" onClick={() => setIsImageZoomed(false)}>
+            <button
+              type="button"
+              className="lightbox-close-btn"
+              onClick={() => setIsImageZoomed(false)}
+              aria-label="Tutup tampilan penuh"
+            >
+              <X size={26} />
+            </button>
+            <div className="lightbox-dialog" onClick={(e) => e.stopPropagation()}>
+              <img
+                src={activeModalProject.imageUrl}
+                alt={activeModalProject.title}
+                className="lightbox-img"
+              />
+              <div className="lightbox-caption">
+                <h4>{activeModalProject.title}</h4>
+                <span>Diagram Topologi Resolusi Penuh</span>
               </div>
             </div>
           </div>

@@ -9,11 +9,42 @@ import { Skills } from './components/Skills';
 import { Projects } from './components/Projects';
 import { Contact } from './components/Contact';
 import { ScrollToTop } from './components/ScrollToTop';
+import { CiscoCaseStudyPage } from './pages/CiscoCaseStudyPage';
 
 const PortfolioContent: React.FC = () => {
   const [activeSection, setActiveSection] = useState<string>('home');
+  const [isCaseStudyOpen, setIsCaseStudyOpen] = useState<boolean>(false);
 
   useEffect(() => {
+    const handleHash = () => {
+      const hash = window.location.hash;
+      if (hash.startsWith('#/case-study/cisco') || hash.startsWith('#/project/proj-9')) {
+        setIsCaseStudyOpen(true);
+        window.scrollTo({ top: 0, behavior: 'instant' });
+      } else {
+        setIsCaseStudyOpen(false);
+      }
+    };
+
+    handleHash();
+    window.addEventListener('hashchange', handleHash);
+    return () => window.removeEventListener('hashchange', handleHash);
+  }, []);
+
+  const handleBackToPortfolio = () => {
+    setIsCaseStudyOpen(false);
+    window.location.hash = '#projects';
+    setTimeout(() => {
+      const el = document.getElementById('projects');
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth' });
+      }
+    }, 50);
+  };
+
+  useEffect(() => {
+    if (isCaseStudyOpen) return;
+
     let ticking = false;
     const sections = ['home', 'about', 'education', 'experience', 'skills', 'projects', 'contact'];
 
@@ -43,7 +74,11 @@ const PortfolioContent: React.FC = () => {
 
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [isCaseStudyOpen]);
+
+  if (isCaseStudyOpen) {
+    return <CiscoCaseStudyPage onBack={handleBackToPortfolio} />;
+  }
 
   return (
     <div className="portfolio-app">

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { 
   Code2, 
   Laptop, 
@@ -17,6 +17,11 @@ export const Skills: React.FC = () => {
   const allCategoryName = categories[0];
 
   const [selectedCategory, setSelectedCategory] = useState<string>(allCategoryName);
+
+  // Sync selectedCategory when language changes
+  useEffect(() => {
+    setSelectedCategory(allCategoryName);
+  }, [allCategoryName]);
 
   // If the language switches, ensure selectedCategory aligns with allCategory if needed
   const isAll = selectedCategory === allCategoryName || selectedCategory === 'All' || selectedCategory === 'Semua';
